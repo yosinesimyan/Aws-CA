@@ -1,0 +1,59 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DelegateS3Access",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::891612556772:user/Admin-B-02"
+            },
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::s3-departments",
+                "arn:aws:s3:::s3-departments/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::891612556772:user/IT-B-02"
+            },
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3-departments",
+                "arn:aws:s3:::s3-departments/IT/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::891612556772:user/DevOps-B-02"
+            },
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3-departments",
+                "arn:aws:s3:::s3-departments/DevOps/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::891612556772:user/Marketing-B-02"
+            },
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3-departments",
+                "arn:aws:s3:::s3-departments/Marketing/*"
+            ]
+        }
+    ]
+}
