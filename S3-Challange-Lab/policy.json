@@ -5,7 +5,7 @@
             "Sid": "DelegateS3Access",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::891612556772:user/Admin-B-02"
+                "AWS": "arn:aws:iam::XXXXXXXXXXXX:user/Admin-B-02"
             },
             "Action": [
                 "s3:Get*",
@@ -19,7 +19,7 @@
         {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::891612556772:user/IT-B-02"
+                "AWS": "arn:aws:iam::XXXXXXXXXXXX:user/IT-B-02"
             },
             "Action": [
                 "s3:Get*",
@@ -33,7 +33,7 @@
         {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::891612556772:user/DevOps-B-02"
+                "AWS": "arn:aws:iam::XXXXXXXXXXXX:user/DevOps-B-02"
             },
             "Action": [
                 "s3:*"
@@ -46,7 +46,7 @@
         {
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::891612556772:user/Marketing-B-02"
+                "AWS": "arn:aws:iam::XXXXXXXXXXXX:user/Marketing-B-02"
             },
             "Action": [
                 "s3:PutObject",
