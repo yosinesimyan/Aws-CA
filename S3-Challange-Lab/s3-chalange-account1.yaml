@@ -6,7 +6,7 @@ Parameters:
   UsersPassword:
     Description: Enter users Paaswords Here
     Type: String
-    Default: arn:aws:s3:::s3-departments
+
 
 Resources:
 
