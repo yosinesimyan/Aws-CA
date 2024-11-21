@@ -14,7 +14,7 @@ Resources:
     Properties:
       UserName: IT-A-01
       LoginProfile:
-        Password: Qwer1234!
+        Password: Pass-here
         PasswordResetRequired: false
       Policies:
         - PolicyName: bucket-it-access
@@ -33,7 +33,7 @@ Resources:
     Properties:
       UserName: DevOps-A-01
       LoginProfile:
-        Password: Qwer1234!
+        Password: Pass-here
         PasswordResetRequired: false
       Policies:
       - PolicyName: bucket-devops-access
@@ -52,7 +52,7 @@ Resources:
     Properties:
       UserName: Admin-A-01
       LoginProfile:
-        Password: Qwer1234!
+        Password: Pass-here
         PasswordResetRequired: false
       Policies:
       - PolicyName: bucket-admin-access
@@ -72,7 +72,7 @@ Resources:
     Properties:
       UserName: Marketing-A-01
       LoginProfile:
-        Password: Qwer1234!
+        Password: Pass-here
         PasswordResetRequired: false
       Policies:
         - PolicyName: bucket-marketing-access
