@@ -5,6 +5,10 @@ Parameters:
     Description: the bucket ARN at acount1
     Type: String
     Default: arn:aws:s3:::s3-departments
+  UsersPassword:
+    Description: Enter users Paaswords Here
+    Type: String
+    Default: arn:aws:s3:::s3-departments
 
 Resources:
 
@@ -13,7 +17,7 @@ Resources:
     Properties:
       UserName: IT-B-02
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
       - PolicyName: account1-s3-IT-access
@@ -34,7 +38,7 @@ Resources:
     Properties:
       UserName: DevOps-B-02
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
       - PolicyName: account1-s3-DevOps-access
@@ -54,7 +58,7 @@ Resources:
     Properties:
       UserName: Admin-B-02
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
       - PolicyName: account1-s3-Admin-access
@@ -76,7 +80,7 @@ Resources:
     Properties:
       UserName: Marketing-B-02
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
       - PolicyName: account1-s3-Marketing-access

@@ -1,6 +1,13 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: "CloudFormation template to create Admin and User1 accounts with specified roles and policies."
 
+Parameters: 
+
+  UsersPassword:
+    Description: Enter users Paaswords Here
+    Type: String
+    Default: arn:aws:s3:::s3-departments
+
 Resources:
 
   S3Bucket:
@@ -14,7 +21,7 @@ Resources:
     Properties:
       UserName: IT-A-01
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
         - PolicyName: bucket-it-access
@@ -33,7 +40,7 @@ Resources:
     Properties:
       UserName: DevOps-A-01
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
       - PolicyName: bucket-devops-access
@@ -52,7 +59,7 @@ Resources:
     Properties:
       UserName: Admin-A-01
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
       - PolicyName: bucket-admin-access
@@ -72,7 +79,7 @@ Resources:
     Properties:
       UserName: Marketing-A-01
       LoginProfile:
-        Password: Pass-here
+        Password: !Ref UsersPassword
         PasswordResetRequired: false
       Policies:
         - PolicyName: bucket-marketing-access
