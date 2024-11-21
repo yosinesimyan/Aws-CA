@@ -7,6 +7,13 @@ Parameters:
     Description: Enter users Paaswords Here
     Type: String
 
+  2ndAcountNumber:
+    Description: Enter the number of the account gets access to the s3 bucket
+    Type: String
+
+  s3BucketName:
+    Description: Enter s3 bucket name
+    Type: String
 
 Resources:
 
@@ -15,6 +22,23 @@ Resources:
     DeletionPolicy: Retain
     Properties:
       BucketName: s3-departments 
+  
+  S3BucketPolicy:
+  Type: AWS::S3::BucketPolicy
+  Properties:
+    Bucket: !Ref S3Bucket
+    PolicyDocument:
+      Version: 2012-10-17
+      Statement:
+        - Action:
+            - 's3:GetObject'
+            - 's3:ListObject'
+          Effect: Allow
+          Resource: !Join
+             - !Sub arn:aws:s3:::${S3Bucket}
+             - !Sub arn:aws:s3:::${S3Bucket}/IT/*
+          Principal:  
+            AWS: "arn:aws:iam::${2ndAcountNumber}:user/Admin-B-02"
 
   User1:
     Type: AWS::IAM::User
