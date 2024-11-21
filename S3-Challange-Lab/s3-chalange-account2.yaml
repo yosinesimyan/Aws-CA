@@ -43,11 +43,10 @@ Resources:
           Statement:
           - Effect: Allow
             Action:
-            - s3:Get*
-            - s3:List*
-            - s3:Describe*
+            - s3:*Object
+            - s3:ListBucket
             Resource:
-              - !Ref BucketArn
+              - !Sub ${BucketArn}
               - !Sub ${BucketArn}/DevOps/*
     
   User3:
@@ -64,9 +63,11 @@ Resources:
           Statement:
           - Effect: Allow
             Action:
-            - s3:*
+            - s3:Get*
+            - s3:List*
+            - s3:Describe*
             Resource:
-              - !Ref BucketArn
+              - !Sub ${BucketArn}
               - !Sub ${BucketArn}/*
                   
 
@@ -84,11 +85,10 @@ Resources:
           Statement:
           - Effect: Allow
             Action:
-            - s3:Get*
-            - s3:List*
-            - s3:Describe*
+            - s3:PutObject
+            - s3:PutObjectAcl
             Resource:
-              - !Ref BucketArn
+              - !Sub ${BucketArn}
               - !Sub ${BucketArn}/Marketing/*
     
 

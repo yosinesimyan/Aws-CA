@@ -7,7 +7,10 @@
             "Principal": {
                 "AWS": "arn:aws:iam::891612556772:user/Admin-B-02"
             },
-            "Action": "s3:*",
+            "Action": [
+                "s3:Get*",
+                "s3:List*"
+            ],
             "Resource": [
                 "arn:aws:s3:::s3-departments",
                 "arn:aws:s3:::s3-departments/*"
@@ -33,8 +36,7 @@
                 "AWS": "arn:aws:iam::891612556772:user/DevOps-B-02"
             },
             "Action": [
-                "s3:Get*",
-                "s3:List*"
+                "s3:*"
             ],
             "Resource": [
                 "arn:aws:s3:::s3-departments",
@@ -47,8 +49,8 @@
                 "AWS": "arn:aws:iam::891612556772:user/Marketing-B-02"
             },
             "Action": [
-                "s3:Get*",
-                "s3:List*"
+                "s3:PutObject",
+                "s3:PutObjectAcl*"
             ],
             "Resource": [
                 "arn:aws:s3:::s3-departments",
