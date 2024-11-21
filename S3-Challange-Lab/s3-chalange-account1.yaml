@@ -35,9 +35,35 @@ Resources:
               - 's3:GetObject'
               - 's3:ListBucket'          
             Resource: 
-              - !Sub ${S3Bucket.Arn}/IT/*
+              - !Sub ${S3Bucket.Arn}/*
             Principal:  
               AWS: !Sub 'arn:aws:iam::${2ndAcountNumber}:user/Admin-B-02'
+          - Effect: Allow
+            Action:
+              - 's3:GetObject'
+              - 's3:ListBucket'          
+            Resource: 
+              - !Sub ${S3Bucket.Arn}/IT/*
+            Principal:  
+              AWS: !Sub 'arn:aws:iam::${2ndAcountNumber}:user/IT-B-02'
+          - Effect: Allow
+            Action:
+              - 's3:GetObject'
+              - 's3:ListBucket' 
+              - 's3:PutObject'
+              - s3:PutObjectAcl'         
+            Resource: 
+              - !Sub ${S3Bucket.Arn}/DevOps/*
+            Principal:  
+              AWS: !Sub 'arn:aws:iam::${2ndAcountNumber}:user/DevOps-B-02'
+          - Effect: Allow
+            Action: 
+              - 's3:PutObject'
+              - s3:PutObjectAcl'         
+            Resource: 
+              - !Sub ${S3Bucket.Arn}/Marketing/*
+            Principal:  
+              AWS: !Sub 'arn:aws:iam::${2ndAcountNumber}:user/Marketing-B-02'
 
   User1:
     Type: AWS::IAM::User
